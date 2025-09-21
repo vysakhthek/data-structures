@@ -1,5 +1,5 @@
 
-def simple_calculator(num1: int, num2: int, operation: str) -> str:
+def simpleCalculator(num1: int, num2: int, operation: str) -> str:
     if operation == "+":
         result = num1 + num2
     elif operation == "-":
@@ -23,5 +23,5 @@ num1 = int(input("Enter first number"))
 num2 = int(input("Enter second number"))
 operation = str(input("Enter the operation to do"))
 
-result = simple_calculator(num1, num2, operation) 
+result = simpleCalculator(num1, num2, operation) 
 print("Result :", result)
