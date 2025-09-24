@@ -1,0 +1,43 @@
+from typing import List
+
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        count = 0
+        prefix_sum=0
+        frequency={0:1}
+        for num in nums:
+            prefix_sum +=num
+            if prefix_sum-k in frequency:
+                count += frequency[prefix_sum - k]
+            frequency[prefix_sum] = frequency.get(prefix_sum, 0) + 1
+        return count
+
+# class Solution:
+#     def subarraySum(self, nums: List[int], k: int) -> int:
+#         count = 0
+#         current_prefix_sum = 0
+#         prefix_sum_count = {0: 1}
+#         for num in nums:
+#             current_prefix_sum += num
+#             if current_prefix_sum - k in prefix_sum_count:
+#                 count += prefix_sum_count[current_prefix_sum - k]
+
+#             if current_prefix_sum not in prefix_sum_count:
+#                 prefix_sum_count[current_prefix_sum] = 1
+#             else:
+#                 prefix_sum_count[current_prefix_sum] += 1
+
+#         return count
+
+
+#Brute force solution
+# class Solution:
+#     def subarraySum(self, nums: List[int], k: int) -> int:
+#         count = 0
+#         for i in range(len(nums)):
+#             sum = 0
+#             for j in range(i, len(nums)):
+#                 sum += nums[j]
+#                 if sum == k:
+#                     count += 1
+#         return count

@@ -19,3 +19,10 @@ if __name__ == "__main__":
     sol = Solution()
     answer= sol.leftRightDifference([10,4,8,3])
     print(answer)
+
+
+class OptimizedSolution:
+      def leftRightDifference(self, nums: List[int]) -> List[int]:
+            output = []
+            for i in range(len(nums)):
+                  output.append((sum))
